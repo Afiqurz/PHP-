@@ -1,0 +1,29 @@
+<!-- Main content -->
+    <?php
+    if (isset($_GET['page'])){
+      if ($_GET['page']=='dashboard'){
+        include('dashboard.php');
+      }
+      else if($_GET['page']=='data-mahasiswa'){
+        include('data_mahasiswa.php');
+      }
+      else if($_GET['page']=='data-kelas'){
+        include('data_kelas.php');
+      }
+      else if($_GET['page']=='edit-data'){
+        include('edit/edit_data.php');
+      }
+      else if($_GET['page']=='data-siswa'){
+        include('data_siswa.php');
+      }
+      else if($_GET['page']=='edit-siswa '){
+        include('edit/edit_siswa.php');
+      }
+      else{
+        include('data_kuliah.php');
+      }
+    }
+      else{
+      include('dashboard.php');}?>
+
+  </div>
