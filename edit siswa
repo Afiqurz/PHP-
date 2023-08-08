@@ -1,0 +1,77 @@
+<?php
+$id = $_GET['id'];
+$query = mysqli_query($koneksi,"SELECT * FROM tb_siswa WHERE id='$id'");
+$view =mysqli_fetch_array($query)
+?>
+<section class="content">
+    <div class="container-fluid">
+        <div class="card card-warning">
+            <div class="card-header">
+                <h3 class="card-title">Edit Data Siswa</h3>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body">
+                <form method="get" action="update/update_siswa">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <!-- text input -->
+                            <div class="form-group">
+                                <label>Nama</label> 
+                                <input type="text" class="form-control" placeholder="Nama  "name='nama' value="<?php echo $view ['nama'];?>">
+                                <input type="text" class="form-control" placeholder="Nama" name='id'value="<?php echo $view['id']; ?>" hidden>
+                            
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label>NIS</label>
+                                <input type="text" class="form-control" placeholder="NIS ..." name='nis'value="<?php echo $view ['nis'];?>">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <!-- textarea -->
+                            <div class="col-sm-6">
+                            <div class="form-group">
+                                <label>alamat</label>
+                                <input type="text" class="form-control" placeholder="Masukan Alamat ..."value="<?php echo $view ['alamat'];?>">
+                            </div>
+                        </div>
+                    </div>
+                        
+
+                    <!-- input states -->
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form=group">
+                                <label> kelamin</label>
+                                <select>
+                                    <option value=""selected><?php echo $view['jenis_kelamin'];?></option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                  
+                    <div class="form-row">
+                    <div class="col">
+                        <label for="id_kelas">Kelas</label>
+                        <select id="id_kelas" name="id_kelas" required>
+                            <option value="id_kelas">Pilih Kelas</option>
+                            <option value="1">X</option>
+                            <option value="2">XI</option>
+                            <option value="3">XII</option>
+                        </select>
+                    </div>
+
+
+                            <div class="row">
+                                <div class="col-sm-6">
+
+
+</form>
+<br>
+<br>
+<button class="btn btn-sm btn-info">simpan</button>
+                                </div>
+</section>
